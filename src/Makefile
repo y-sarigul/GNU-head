@@ -2,7 +2,9 @@ OBJDIR	:= ../objects
 NAME	:= $(OBJDIR)/src.a
 CFLAGS	:= -Wall -Wextra -Werror -I ../includes -c
 FILES	:= ft_checkflag.c\
-		   ft_utils.c
+		   ft_utils.c\
+		   ft_control.c\
+		   ft_print.c\
 
 OBJ		:= $(FILES:%.c=$(OBJDIR)/%.o)
 

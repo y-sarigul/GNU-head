@@ -23,6 +23,7 @@ fclean: clean
 	@rm -f $(NAME)
 	@rm -rf $(OBJDIR)
 	@rm -rf head
+	@rm -f *.txt
 
 re: fclean all
 

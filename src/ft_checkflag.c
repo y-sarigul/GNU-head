@@ -11,7 +11,7 @@ static struct option options[] = {
 
 void	ft_checkflags(int ac, char **av){
 	
-	int		result, err_flag, opt_i;
+	int		result, err_flag;
 	int		c_bytes_flag, n_lines_flag, v_verbose_flag, help_flag, version_flag;
 	int		c_bytes_arg, n_lines_arg;
 
@@ -19,7 +19,6 @@ void	ft_checkflags(int ac, char **av){
 	c_bytes_arg = 0;
 	n_lines_arg = 0;
 	opterr = 0; 
-	opt_i = 0;
 	while ((result = getopt_long(ac, av, "c:n:v", options, NULL)) != -1){
 		if (n_lines_flag == 0 && (result == 'c' || result == '1')){
 			c_bytes_flag = 1;
@@ -56,26 +55,10 @@ void	ft_checkflags(int ac, char **av){
 	if (err_flag == 1)
 		exit(EXIT_FAILURE);
 
-	else if (c_bytes_flag){
-		if ((opt_i - ac) >= 2 || v_verbose_flag){
-			while (opt_i < ac){
-				printf("==> %s <==",av[opt_i]);
-				ft_printbytes(c_bytes_arg, av[opt_i++]);
-			}
-		}
-		else if (opt_i == 1)
-			ft_printfbytes(c_bytes_arg, av[opt_i++]);
-		else
-			printf(
-	}
+	else if (c_bytes_flag)
+		ft_controlbytes(ac, av, optind, c_bytes_arg, v_verbose_flag);
 
 	else if (n_lines_flag)
 		printf("argv = %d\n",n_lines_arg);
 
-	if (optind != ac)
-		printf("Argumans without options:\n");
-	opt_i = optind;
-	while (opt_i < ac)
-		puts(av[opt_i++]);
 }
-
