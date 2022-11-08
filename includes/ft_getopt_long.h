@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <getopt.h>
 #include <fcntl.h>
+#include "get_next_line.h"
 
 //ft_checkflag.c
 void	ft_checkflags(int , char**);
@@ -15,8 +16,10 @@ int		ft_atoi(const char *);
 
 //ft_control.c
 void	ft_controlbytes(int, char **, int, int, int);
+void	ft_controllines(int, char **, int, int, int);
 
 //ft_print.c
 void	ft_printbytes(int, char *);
+void	ft_printlines(int, char *);
 
 #endif

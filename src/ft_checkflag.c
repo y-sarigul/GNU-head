@@ -19,7 +19,8 @@ void	ft_checkflags(int ac, char **av){
 	c_bytes_arg = 0;
 	n_lines_arg = 0;
 	opterr = 0; 
-	while ((result = getopt_long(ac, av, "c:n:v", options, NULL)) != -1){
+	while ((result = getopt_long(ac, av, "c:n:v", options, NULL)) != -1)
+	{
 		if (n_lines_flag == 0 && (result == 'c' || result == '1')){
 			c_bytes_flag = 1;
 			c_bytes_arg = ft_atoi(optarg);
@@ -59,6 +60,6 @@ void	ft_checkflags(int ac, char **av){
 		ft_controlbytes(ac, av, optind, c_bytes_arg, v_verbose_flag);
 
 	else if (n_lines_flag)
-		printf("argv = %d\n",n_lines_arg);
+		ft_controllines(ac, av, optind, n_lines_arg, v_verbose_flag);
 
 }
