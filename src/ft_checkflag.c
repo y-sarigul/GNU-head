@@ -56,6 +56,13 @@ void	ft_checkflags(int ac, char **av){
 	if (err_flag == 1)
 		exit(EXIT_FAILURE);
 
+
+  if (help_flag)
+    ft_printhelp();
+
+  else if (version_flag)
+    ft_printversion();
+
 	else if (c_bytes_flag)
 		ft_controlbytes(ac, av, optind, c_bytes_arg, v_verbose_flag);
 

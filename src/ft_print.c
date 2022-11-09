@@ -29,36 +29,14 @@ void	ft_printlines(int lines, char *sign){
 	}
 }
 
+void  ft_printhelp(void){
+  printf("-c ya da--bytes: Dosyanın başından itibaren kaş byte'ın yazdırılacağını belirtir.Bu seçeneklerin argümanları vadır.\n");
+  printf("-n ya da --lines: Dosyanınbaşından itibaren kaçsatırın yazdırılacağını belirtir. Bu da argümanlı bir seçenektir.\n");
+  printf("-v ya da --verbose: Dosyaların isimlerini de yazdırır.\n");
+  printf("--help: Komut hakkında açıklamayı ekrana yazdırır. (Şu anda okuduğunuz yazıyı aynı biçimde kullanabilirsiniz)\n");
+  printf("--version: Copyright bilgisini ve versiyon numarasını yazdırır\n");
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void  ft_printversion(void){
+  printf("Version -0.01\n");
+}
