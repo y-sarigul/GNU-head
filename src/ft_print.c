@@ -29,6 +29,13 @@ void	ft_printlines(int lines, char *sign){
 	}
 }
 
+void ft_printline_without_argv(int line){
+  while (line){
+    printf("%s",get_next_line(0));
+    line--;
+  }
+}
+
 void  ft_printhelp(void){
   printf("-c ya da--bytes: Dosyanın başından itibaren kaş byte'ın yazdırılacağını belirtir.Bu seçeneklerin argümanları vadır.\n");
   printf("-n ya da --lines: Dosyanınbaşından itibaren kaçsatırın yazdırılacağını belirtir. Bu da argümanlı bir seçenektir.\n");
@@ -39,4 +46,15 @@ void  ft_printhelp(void){
 
 void  ft_printversion(void){
   printf("Version -0.01\n");
+}
+
+void  ft_printin(void){
+  char *buff;
+
+  buff = (char *)malloc(sizeof(char) * 1000);
+  while (1){
+    scanf("%s",buff);
+    printf("%s\n",buff);
+  }
+  free(buff);
 }

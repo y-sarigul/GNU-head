@@ -21,7 +21,9 @@ void	ft_controllines(int, char **, int, int, int);
 //ft_print.c
 void	ft_printbytes(int, char *);
 void	ft_printlines(int, char *);
+void  ft_printline_without_argv(int);
 void  ft_printhelp(void);
 void  ft_printversion(void);
+void  ft_printin(void);
 
 #endif

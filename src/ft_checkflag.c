@@ -56,7 +56,6 @@ void	ft_checkflags(int ac, char **av){
 	if (err_flag == 1)
 		exit(EXIT_FAILURE);
 
-
   if (help_flag)
     ft_printhelp();
 
@@ -68,5 +67,7 @@ void	ft_checkflags(int ac, char **av){
 
 	else if (n_lines_flag)
 		ft_controllines(ac, av, optind, n_lines_arg, v_verbose_flag);
-
+  
+  else if (optind == ac)
+    ft_printin();
 }
