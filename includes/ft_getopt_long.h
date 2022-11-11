@@ -23,7 +23,7 @@ void	ft_printbytes(int, char *);
 void	ft_printlines(int, char *);
 void  ft_printhelp(void);
 void  ft_printversion(void);
-void  ft_printline_witout_argv(int);
+void  ft_printline_without_argv(int);
 void  ft_printin(void);
 void  ft_printdefault(int, int, char **);
 

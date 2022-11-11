@@ -42,18 +42,14 @@ void  ft_printversion(void){
 }
 
 void ft_printline_without_argv(int line){
+
   while (line){
     printf("%s",get_next_line(0));
     line--;
   }
+
 }
 
-void ft_printline_without_argv(int line){
-  while (line){
-    printf("%s",get_next_line(0));
-    line--;
-  }
-}
 void  ft_printin(void){
   char *buff;
 
@@ -73,7 +69,7 @@ void  ft_printdefault(int v, int ac, char ** av){
   count = 10;
   i = 1;
   if (ac == 2){
-    If (v)
+    if (v)
 			printf("==> %s <==\n",av[i]);
     fd = open(av[i], O_RDONLY);
     while (count--){
