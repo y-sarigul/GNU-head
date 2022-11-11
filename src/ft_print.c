@@ -29,13 +29,6 @@ void	ft_printlines(int lines, char *sign){
 	}
 }
 
-void ft_printline_without_argv(int line){
-  while (line){
-    printf("%s",get_next_line(0));
-    line--;
-  }
-}
-
 void  ft_printhelp(void){
   printf("-c ya da--bytes: Dosyanın başından itibaren kaş byte'ın yazdırılacağını belirtir.Bu seçeneklerin argümanları vadır.\n");
   printf("-n ya da --lines: Dosyanınbaşından itibaren kaçsatırın yazdırılacağını belirtir. Bu da argümanlı bir seçenektir.\n");
@@ -48,6 +41,19 @@ void  ft_printversion(void){
   printf("Version -0.01\n");
 }
 
+void ft_printline_without_argv(int line){
+  while (line){
+    printf("%s",get_next_line(0));
+    line--;
+  }
+}
+
+void ft_printline_without_argv(int line){
+  while (line){
+    printf("%s",get_next_line(0));
+    line--;
+  }
+}
 void  ft_printin(void){
   char *buff;
 
@@ -57,4 +63,35 @@ void  ft_printin(void){
     printf("%s\n",buff);
   }
   free(buff);
+}
+
+void  ft_printdefault(int v, int ac, char ** av){
+  int fd;
+  int i;
+  int count;
+
+  count = 10;
+  i = 1;
+  if (ac == 2){
+    If (v)
+			printf("==> %s <==\n",av[i]);
+    fd = open(av[i], O_RDONLY);
+    while (count--){
+      printf("%s", get_next_line(fd));
+    }
+    close (fd);
+  }
+
+  else if (ac > 2){
+    while (ac >= 2){
+			printf("==> %s <==\n",av[i]);
+      fd = open(av[i], O_RDONLY);
+      while (count--)
+        printf("%s", get_next_line(fd));
+      close(fd);
+      ac--;
+      count = 10;
+      i++;
+    }
+  }
 }

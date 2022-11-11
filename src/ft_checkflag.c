@@ -62,6 +62,9 @@ void	ft_checkflags(int ac, char **av){
   else if (version_flag)
     ft_printversion();
 
+  else if (v_verbose_flag)
+    ft_printdefault(v_verbose_flag, ac, av);
+
 	else if (c_bytes_flag)
 		ft_controlbytes(ac, av, optind, c_bytes_arg, v_verbose_flag);
 
@@ -70,4 +73,11 @@ void	ft_checkflags(int ac, char **av){
   
   else if (optind == ac)
     ft_printin();
+
+  else if (optind == 1 && ac > 1){
+    printf("ac = %d\n",ac);
+    printf("v == %d\n",version_flag);
+    printf("default flag in \n");
+    ft_printdefault(v_verbose_flag, ac, av);
+  }
 }

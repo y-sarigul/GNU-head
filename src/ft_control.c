@@ -47,11 +47,8 @@ void	ft_controllines(int ac, char **av, int opt, int lines_av, int v)
 	}
 
 	else if ((ac - opt) == 1)
-	{
 		ft_printlines(lines_av, av[opt]);
-	}
 
-  else if (ac == opt) {
+  else if (ac == opt)
     ft_printline_without_argv(lines_av);
-  }
 }
